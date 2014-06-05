@@ -24,6 +24,7 @@
     "temp": "~0.6.0",
     "wrench": "^1.5",
     "underscore": "1.x",
-    "glob": "4.x"
+    "glob": "4.x",
+    "change-case": "2.1.1"
   }
 }
