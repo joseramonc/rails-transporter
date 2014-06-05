@@ -2,6 +2,7 @@ fs = require 'fs'
 path = require 'path'
 pluralize = require 'pluralize'
 glob = require 'glob'
+changeCase = require 'change-case'
 _ = require 'underscore'
 
 AssetFinderView = require './asset-finder-view'
@@ -22,6 +23,10 @@ class FileOpener
                        .replace("app/views/", "app/controllers/") + "_controller.rb"
     else if @isSpec(@currentFile)
       targetFile = @currentFile.replace('spec/', 'app/').replace('_spec.rb', '.rb')
+    else if @isController(@currentFile) and @currentBufferLine.indexOf("include") isnt -1
+      concernsDir = "#{atom.project.getPath()}/app/controllers/concerns"
+      result = @currentBufferLine.match(/include\s+([a-zA-Z0-9:/]+)/)
+      targetFile = "#{concernsDir}/#{changeCase.snakeCase(result[1])}.rb" if result?[1]?
 
     @open(targetFile)
     
