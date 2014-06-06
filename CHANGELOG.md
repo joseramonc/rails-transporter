@@ -1,5 +1,6 @@
-HEAD
+## HEAD
 * Fix `open-asset` couldn't .erb file
+* Implement `open-factory` from model/model-spec
 
 ## 0.4.0 - Adds open-layout command
 `open-layout` command can open layout file from controllers in following situations:

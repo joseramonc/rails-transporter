@@ -12,6 +12,7 @@
     "rails-transporter:open-spec",
     "rails-transporter:open-partial-template",
     "rails-transporter:open-asset",
+    "rails-transporter:open-factory",
     "rails-transporter:open-migration-finder"
   ],
   "repository": "https://github.com/hmatsuda/rails-transporter",

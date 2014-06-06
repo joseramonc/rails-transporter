@@ -128,6 +128,8 @@ class FileOpener
           targetFile = glob.sync("#{layoutDir}/application.*")
 
     @open(targetFile)
+    
+  openFactory: ->
 
   ## Private method
   createAssetFinderView: ->
