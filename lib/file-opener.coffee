@@ -130,6 +130,14 @@ class FileOpener
     @open(targetFile)
     
   openFactory: ->
+    @reloadCurrentEditor()
+    if @isModel(@currentFile)
+      resource = path.basename(@currentFile, '.rb')
+      targetFile = @currentFile.replace('app/models', 'spec/factories')
+                               .replace(resource, "#{pluralize(resource)}")
+
+    @open(targetFile)
+
 
   ## Private method
   createAssetFinderView: ->
